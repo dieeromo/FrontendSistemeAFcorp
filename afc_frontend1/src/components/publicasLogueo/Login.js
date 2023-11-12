@@ -1,0 +1,103 @@
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../../actions/userActions'
+
+
+import { useNavigate } from 'react-router';
+
+import Messages from '../comunes/Messages'
+import Loader from '../comunes/Loader';
+
+
+
+
+export default function Login() {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const disptach = useDispatch();
+
+    const userLogin = useSelector(state => state.userLogin);
+    const { error, loading, userInfo } = userLogin;
+
+    const navigate = useNavigate();
+    const path = '/';
+    console.log(userInfo)
+
+    useEffect(() => {
+        if (userInfo) {
+            console.log("este es el mensaje")
+            console.log(userInfo.user_name)
+            console.log(userLogin)
+            navigate(path);
+        }
+    }, [userInfo]);
+
+
+
+
+
+    const submitHandler = (e) => {
+        e.preventDefault()
+        disptach(login(email, password))
+    }
+
+    return (
+        <>
+            {error && <Messages>{error}</Messages>}
+            {loading ?
+                <Loader /> :
+                <div>
+                    <h3>Pagina de login</h3>
+                    < form onSubmit={submitHandler} action="#" method="POST">
+                        <input type="hidden" name="remember" defaultValue="true" />
+                        <div>
+                            <div >
+                                <label htmlFor="email-address"> Email address </label>
+                                <input
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    autoComplete="email"
+                                    required
+                                    className=""
+                                    placeholder="Email address"
+                                />
+                            </div>
+
+
+                            <div>
+                                <label htmlFor="password"> Password </label>
+                                <input
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    id="password"
+                                    name="password"
+                                    type="password"
+                                    autoComplete="current-password"
+                                    required
+                                    className=""
+                                    placeholder="Password"
+                                />
+                            </div>
+
+
+                            <div>
+                                <button type="submit" className="" >
+                                    <span className=""> </span>
+                                    Sign in
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+
+            }
+        </>
+    )
+}
