@@ -83,8 +83,7 @@ export const getSoloUser = (id) => async (dispatch, getState) => {
             }
         }
 
-        const {data} = await axios.get(
-            `http://127.0.0.1:8000/users/${id}/`, 
+        const {data} = await axios.get(RUTA_SERVIDOR + `/users/${id}/`, 
             config
         )
 
@@ -117,8 +116,7 @@ export const  getListUsers = () => async (dispatch, getState) => {
             }
         }
 
-        const {data} = await axios.get(
-            `http://127.0.0.1:8000/users/getUsers/`, 
+        const {data} = await axios.get(RUTA_SERVIDOR + `/users/getUsers/`, 
             config
         )
 
@@ -154,8 +152,7 @@ export const register = (user_name, email, password) => async (dispatch) => {
             }
         }
 
-        const {data} = await axios.post(
-            'http://0.0.0.0:8001/users/register/',
+        const {data} = await axios.post(RUTA_SERVIDOR + '/users/register/',
             {'user_name': user_name, 'email': email, 'password': password}, config
         )
 
@@ -192,8 +189,7 @@ export const login = (email, password) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post(
-            'http://0.0.0.0:8001/users/login/',
+        const { data } = await axios.post(RUTA_SERVIDOR + '/users/login/',
             { 'email': email, 'password': password }, config
         )
         console.log("despacaha succes")
