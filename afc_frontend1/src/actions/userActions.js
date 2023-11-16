@@ -24,7 +24,7 @@ import {
     USER_LIST_FAIL,
 } from '../constants/userConstants';
 
-
+import {RUTA_SERVIDOR} from '../ApiRoutes'
 export const editUser = (user) => async (dispatch, getState) => {
     try {
         dispatch({type: USER_EDIT_REQUEST})
@@ -41,8 +41,7 @@ export const editUser = (user) => async (dispatch, getState) => {
             }
         }
 
-        const  {data} = await axios.put(
-            'http://127.0.0.1:8000/users/put/', user, config
+        const  {data} = await axios.put(RUTA_SERVIDOR + '/users/put/', user, config
         )
 
         dispatch({

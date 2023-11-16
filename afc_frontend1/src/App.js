@@ -5,6 +5,9 @@ import Landing from './components/publicasLogueo/Landing';
 import Header from './components/comunes/Header'
 import Login from './components/publicasLogueo/Login'
 import Register from './components/publicasLogueo/Register';
+import RegisterCliente from './components/cliente/RegisterCliente'
+import ListadoCliente from './components/cliente/ListadoCliente'
+import RegisterFacturaVenta from './components/facturasVentas/RegisterFacturaVenta'
 
 function App() {
   return (
@@ -15,6 +18,10 @@ function App() {
         <Route path='/landing' element={<Landing />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/cliente/register' element={<RegisterCliente />} />
+        <Route path='/cliente/listado' element={<ListadoCliente />} />
+        <Route path='/factura/venta/register' element={<RegisterFacturaVenta />} />
+
 
       </Routes>
     </BrowserRouter>
