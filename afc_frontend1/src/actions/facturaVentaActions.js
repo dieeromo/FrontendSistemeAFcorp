@@ -62,3 +62,37 @@ export const createFacturaVentaAction = (numero, fecha, cliente, modocv, empresa
         })
     }
 }
+
+
+export const listFacturaVentaAction = () => async (dispatch, getState) => {
+    try {
+        dispatch({ type: FACTURA_VENTA_LIST_REQUEST })
+
+        const {
+            userLogin: { userInfo },
+        } = getState()
+
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${userInfo.token}`
+            }
+        }
+
+        const { data } = await axios.get(RUTA_SERVIDOR + `/facturaventa/list/`, config);
+
+        dispatch({
+            type: FACTURA_VENTA_LIST_SUCCESS,
+            payload: data
+        })
+
+    } catch (error) {
+        dispatch({
+            type: FACTURA_VENTA_LIST_FAIL,
+            payload: error.response && error.response.data.detail
+                ? error.response.data.detail
+                : error.message,
+        })
+
+    }
+}

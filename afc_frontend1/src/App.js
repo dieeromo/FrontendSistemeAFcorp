@@ -9,6 +9,10 @@ import RegisterCliente from './components/cliente/RegisterCliente'
 import ListadoCliente from './components/cliente/ListadoCliente'
 import RegisterFacturaVenta from './components/facturasVentas/RegisterFacturaVenta'
 
+import ListFacturaVenta from './components/facturasVentas/ListFacturaVenta'
+import RegisterIncidentes from './components/incidentes/RegisterIncidentes'
+import ListIncidentes from './components/incidentes/ListIncidentes'
+
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +26,11 @@ function App() {
         <Route path='/cliente/listado' element={<ListadoCliente />} />
         <Route path='/factura/venta/register' element={<RegisterFacturaVenta />} />
 
+        <Route path='/factura/venta/list' element={< ListFacturaVenta />} />
+        <Route path='/incidentes/registro' element={< RegisterIncidentes />} />
+        <Route path='/incidentes/list' element={<  ListIncidentes />} />
+
+       
 
       </Routes>
     </BrowserRouter>

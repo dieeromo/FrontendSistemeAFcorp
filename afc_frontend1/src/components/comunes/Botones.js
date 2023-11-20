@@ -36,3 +36,35 @@ export function LoginButton(){
     )
     
 }
+
+export function RegistroIncidenteButton(){
+    const navigate = useNavigate();
+    const path = '/incidentes/registro';
+
+    const botonLoginHandler = () =>{
+        navigate(path)
+    }
+
+    return(
+        <>
+        <button onClick={botonLoginHandler}>Registro Incidente</button>
+        </>
+    )
+    
+}
+
+export function ListaIncidenteButton(){
+    const navigate = useNavigate();
+    const path = '/incidentes/list';
+
+    const botonLoginHandler = () =>{
+        navigate(path)
+    }
+
+    return(
+        <>
+        <button onClick={botonLoginHandler}>Incidentes</button>
+        </>
+    )
+    
+}

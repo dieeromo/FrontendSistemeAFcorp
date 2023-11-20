@@ -1,4 +1,4 @@
-import {LogoutButton, LoginButton} from './Botones'
+import {LogoutButton, LoginButton, RegistroIncidenteButton, ListaIncidenteButton} from './Botones'
 import {useSelector } from 'react-redux';
 
 
@@ -11,7 +11,7 @@ export default function Header(){
     return(
         <>
         {userInfo ? 
-        <div> <span>Bienvenido: {userInfo.user_name} </span><LogoutButton/>  </div>
+        <div> <span>Bienvenido: {userInfo.user_name} </span> <RegistroIncidenteButton/> <ListaIncidenteButton/> <LogoutButton/>  </div>
         : <LoginButton/>}
         
         

@@ -30,3 +30,20 @@ export const facturaVentaCreateReducer = (state = {}, action) => {
     }
 }
 
+
+export const facturaVentasListReducer = (state = { facturasVentas: [] }, action) => {
+    switch (action.type) {
+        case FACTURA_VENTA_LIST_REQUEST:
+            return { loading: true, facturasVentas: [] }
+
+        case FACTURA_VENTA_LIST_SUCCESS:
+            return { loading: false, facturasVentas: action.payload }
+
+        case FACTURA_VENTA_LIST_FAIL:
+            return { loading: false, error: action.payload }
+
+        default:
+            return state
+    }
+}
+

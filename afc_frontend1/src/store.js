@@ -8,8 +8,6 @@ import {
     userSoloReducer,
     userListReducer,
     userEditReducer,
-
-
 } from './reducers/userReducers';
 
 import {
@@ -23,6 +21,20 @@ import {
     modo_cv_ListReducer,
     bodegaListReducer,
 } from './reducers/generalAFCReducers'
+
+import {
+    facturaVentaCreateReducer,
+    facturaVentasListReducer,
+} from './reducers/facturasVentasReducers'
+
+import {
+    nivelListReducer,
+    redListReducer,
+    nodoListReducer,
+    tipoListReducer,
+    incidenteCreateReducer,
+    incidenteListReducer, 
+} from './reducers/incidentesReducers'
 
 const reducer = combineReducers({
 
@@ -43,6 +55,17 @@ const reducer = combineReducers({
     modo_cv_List:modo_cv_ListReducer,
     bodegaList :bodegaListReducer,
 
+    //facturas ventas
+    facturaVentaCreate:facturaVentaCreateReducer,
+    facturaVentasList:facturaVentasListReducer,
+    
+    // de incidentes
+    nivelList:nivelListReducer,
+    redList:redListReducer,
+    nodoList:nodoListReducer,
+    tipoList:tipoListReducer,
+    incidenteCreate :incidenteCreateReducer,
+    incidenteList:incidenteListReducer,
 
 
 })

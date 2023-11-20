@@ -22,5 +22,6 @@ export function SelectorCliente() {
         value: item.id,
     }))
 
+
     return (clienteRegistrados)
 }

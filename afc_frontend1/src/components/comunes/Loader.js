@@ -1,6 +1,4 @@
 const Loader = () => (
-
-
     <div >
       <p>Cargando..........</p>
     </div>
