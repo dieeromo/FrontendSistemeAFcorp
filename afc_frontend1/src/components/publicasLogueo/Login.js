@@ -23,14 +23,28 @@ export default function Login() {
 
     const navigate = useNavigate();
     const path = '/';
-    console.log(userInfo)
+    let tempo = false
+    if(userInfo){
+        if(userInfo.access){
+            tempo = true
+        }
+    }else{
+        tempo = false
+    }
+
+
 
     useEffect(() => {
         if (userInfo) {
             console.log("este es el mensaje")
+            console.log("USER INFO")
             console.log(userInfo.user_name)
+            console.log("USER LOGIN")
             console.log(userLogin)
-            navigate(path);
+            if(tempo){
+                navigate(path);
+            }
+            
         }
     }, [userInfo]);
 
@@ -98,6 +112,7 @@ export default function Login() {
 
 
             }
+          
         </>
     )
 }

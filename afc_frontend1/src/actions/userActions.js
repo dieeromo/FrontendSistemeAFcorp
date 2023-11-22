@@ -192,7 +192,6 @@ export const login = (email, password) => async (dispatch) => {
         const { data } = await axios.post(RUTA_SERVIDOR + '/users/login/',
             { 'email': email, 'password': password }, config
         )
-        console.log("despacaha succes")
 
         dispatch({
             type: USER_LOGIN_SUCCESS,

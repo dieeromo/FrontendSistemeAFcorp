@@ -36,6 +36,12 @@ import {
     incidenteListReducer, 
 } from './reducers/incidentesReducers'
 
+import {
+    tipoProductoListReducer,
+    subTipoProductoListReducer,
+    estadoProductoListReducer
+} from './reducers/productoReducers'
+
 const reducer = combineReducers({
 
     // User stuff
@@ -67,6 +73,10 @@ const reducer = combineReducers({
     incidenteCreate :incidenteCreateReducer,
     incidenteList:incidenteListReducer,
 
+    //producto
+    tipoProductoList : tipoProductoListReducer,
+    subTipoProductoList : subTipoProductoListReducer,
+    estadoProductoList : estadoProductoListReducer
 
 })
 

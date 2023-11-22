@@ -12,6 +12,7 @@ import RegisterFacturaVenta from './components/facturasVentas/RegisterFacturaVen
 import ListFacturaVenta from './components/facturasVentas/ListFacturaVenta'
 import RegisterIncidentes from './components/incidentes/RegisterIncidentes'
 import ListIncidentes from './components/incidentes/ListIncidentes'
+import RegisterProductos from './components/productos/RegisterProductos'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path='/factura/venta/list' element={< ListFacturaVenta />} />
         <Route path='/incidentes/registro' element={< RegisterIncidentes />} />
         <Route path='/incidentes/list' element={<  ListIncidentes />} />
+        <Route path='/productos/register' element={<  RegisterProductos />} />
 
        
 
