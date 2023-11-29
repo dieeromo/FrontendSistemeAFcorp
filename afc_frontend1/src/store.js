@@ -39,7 +39,8 @@ import {
 import {
     tipoProductoListReducer,
     subTipoProductoListReducer,
-    estadoProductoListReducer
+    estadoProductoListReducer,
+    productoListReducer,
 } from './reducers/productoReducers'
 
 const reducer = combineReducers({
@@ -76,7 +77,8 @@ const reducer = combineReducers({
     //producto
     tipoProductoList : tipoProductoListReducer,
     subTipoProductoList : subTipoProductoListReducer,
-    estadoProductoList : estadoProductoListReducer
+    estadoProductoList : estadoProductoListReducer,
+    productoList:productoListReducer,
 
 })
 

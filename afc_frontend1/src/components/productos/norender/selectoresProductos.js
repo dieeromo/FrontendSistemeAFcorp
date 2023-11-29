@@ -1,7 +1,26 @@
 import  { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 
-import {listSubTipoProductoAction, listTipoProductoAction, listEstadoProductoAction} from '../../../actions/productoActions'
+import {listSubTipoProductoAction, listTipoProductoAction, listEstadoProductoAction, listProductoAction} from '../../../actions/productoActions'
+
+export function SelectorProducto(){
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(listProductoAction())
+    }, [dispatch])
+    const productoList = useSelector(state => state.productoList)
+    const{error, loading, producto} = productoList
+    const lista_de_productos = producto.map((item)=>({
+        codigo: item.codigo,
+        descripcion: item.descripcion,
+        value: item.id,
+        precio_salida:item.precio_salida
+    }))
+
+    return (lista_de_productos)
+}
+
 
 export function SelectorTipoProducto(){
     const dispatch = useDispatch();
@@ -57,3 +76,4 @@ export function SelectorEstadoProducto(){
 
 return(estado_de_productos)
 }
+

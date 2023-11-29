@@ -1,24 +1,45 @@
 import {
-
+//PRODUCTO
 PRODUCTO_CREATE_REQUEST,
 PRODUCTO_CREATE_SUCCESS,
 PRODUCTO_CREATE_FAIL,
 
+PRODUCTO_LIST_REQUEST,
+PRODUCTO_LIST_SUCCESS,
+PRODUCTO_LIST_FAIL,
+
+//TIPO PRODUCTO
 TIPO_PRODUCTO_LIST_REQUEST,
 TIPO_PRODUCTO_LIST_SUCCESS,
 TIPO_PRODUCTO_LIST_FAIL,
 TIPO_PRODUCTO_LIST_RESET,
-
+//SUBTIPO PRODUCTO
 SUBTIPO_PRODUCTO_LIST_REQUEST,
 SUBTIPO_PRODUCTO_LIST_SUCCESS,
 SUBTIPO_PRODUCTO_LIST_FAIL,
 SUBTIPO_PRODUCTO_LIST_RESET,
-
+//ESTADO PRODUCTO
 ESTADO_PRODUCTO_LIST_REQUEST,
 ESTADO_PRODUCTO_LIST_SUCCESS,
 ESTADO_PRODUCTO_LIST_FAIL,
 ESTADO_PRODUCTO_LIST_RESET,
 } from '../constants/productoConstants'
+
+export const productoListReducer = (state = { producto: [] }, action) => {
+    switch (action.type) {
+        case PRODUCTO_LIST_REQUEST:
+            return { loading: true, producto: [] }
+
+        case PRODUCTO_LIST_SUCCESS:
+            return { loading: false, producto: action.payload }
+
+        case PRODUCTO_LIST_FAIL:
+            return { loading: false, error: action.payload }
+
+        default:
+            return state
+    }
+}
 
 
 export const productoCreateReducer = (state = {}, action) => {

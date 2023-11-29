@@ -8,6 +8,8 @@ import Select from 'react-select'
 
 import { SelectorNivel, SelectorRed, SelectorNodo, SelectorTipo } from './norender/selectoresIncidentes'
 import {createIncidenteAction} from '../../actions/incidentesActions'
+import NavbarAF from '../comunes/NavbarAF'
+import '../../App.css'
 
 export default function RegisterIncidentes() {
     const dispatch = useDispatch();
@@ -46,7 +48,9 @@ export default function RegisterIncidentes() {
     }
     return (
         <>
-            <h1>Registro incidentes</h1>
+        <NavbarAF/>
+        <div className='registro-incidente-container'>
+        <h1>Registro incidentes</h1>
             <form onSubmit={handleSubmit} method="POST" action="#">
 
                 <div>
@@ -126,6 +130,8 @@ export default function RegisterIncidentes() {
 
                 <button type='submit'> Guardar </button>
             </form>
+        </div>
+
         </>
     )
 }

@@ -5,6 +5,8 @@ import { register } from '../../actions/userActions'
 import {useNavigate} from 'react-router';
 import Loader from '../comunes/Loader';
 import Messages from '../comunes/Messages';
+import NavbarAF from '../comunes/NavbarAF'
+import '../../App.css'
 
 
 
@@ -50,7 +52,9 @@ return (
         {error && <Messages>{error}</Messages>}
         {loading ? 
         <Loader/> :
-        <div>
+        <>
+        <NavbarAF/>
+        <div className='register-container'>
         <h3>Pagina de resgistro</h3>
         <form onSubmit={submitHandler}  action="#" method="POST">
             <div >
@@ -126,7 +130,7 @@ return (
 
         </form>
         </div>
-
+        </>
         }
  
 

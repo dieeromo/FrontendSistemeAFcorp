@@ -2,6 +2,8 @@ import { SelectorIncidente } from './norender/selectoresIncidentes'
 import { useDispatch} from 'react-redux'
 
 import MUIDataTable from "mui-datatables"
+import NavbarAF from '../comunes/NavbarAF'
+import '../../App.css'
 
 
 
@@ -59,13 +61,18 @@ export default function ListIncidentes() {
     ]
     return (
         <>
-
-
-            <MUIDataTable
+<NavbarAF/>
+<div className='incidente-register-container'>
+<MUIDataTable
                 title={"Incidentes"}
                 data={incidentes}
                 columns={columns}
             />
+
+
+</div>
+
+
 
 
         </>

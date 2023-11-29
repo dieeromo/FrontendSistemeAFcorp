@@ -1,8 +1,13 @@
+import NavbarAF from '../comunes/NavbarAF'
+import '../../App.css'
 
 export default function Landing(){
     return(
         <>
-        <p>Este es el Landing</p>
-        </>
+<NavbarAF/>
+<div className='landing-container'>
+<p>Este es el landing</p>    
+</div>
+</>
     )
 }

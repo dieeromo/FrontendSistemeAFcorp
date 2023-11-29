@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../actions/userActions'
-
-
 import { useNavigate } from 'react-router';
-
 import Messages from '../comunes/Messages'
 import Loader from '../comunes/Loader';
+import NavbarAF from '../comunes/NavbarAF'
+
+import '../../App.css'
 
 
 
@@ -59,10 +59,11 @@ export default function Login() {
 
     return (
         <>
+        <NavbarAF/>
             {error && <Messages>{error}</Messages>}
             {loading ?
                 <Loader /> :
-                <div>
+                <div className="login-container">
                     <h3>Pagina de login</h3>
                     < form onSubmit={submitHandler} action="#" method="POST">
                         <input type="hidden" name="remember" defaultValue="true" />

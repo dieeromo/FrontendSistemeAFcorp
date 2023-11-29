@@ -11,7 +11,37 @@ FACTURA_VENTA_DELETE_FAIL,
 FACTURA_VENTA_CREATE_REQUEST,
 FACTURA_VENTA_CREATE_SUCCESS ,
 FACTURA_VENTA_CREATE_FAIL,
+//DETALLE DE FACTURAS
+FACTURA_DETALLE_VENTA_CREATE_REQUEST,
+FACTURA_DETALLE_VENTA_CREATE_SUCCESS,
+FACTURA_DETALLE_VENTA_CREATE_FAIL,
+
+FACTURA_DETALLE_VENTA_LIST_REQUEST,
+FACTURA_DETALLE_VENTA_LIST_SUCCESS,
+FACTURA_DETALLE_VENTA_LIST_FAIL,
+
+
 } from '../constants/facturasVentasConstants'
+
+
+export const facturaDetalleVentaCreateReducer = (state = {}, action) => {
+    switch (action.type) {
+        case FACTURA_DETALLE_VENTA_CREATE_REQUEST:
+            return { loading: true }
+
+        case FACTURA_DETALLE_VENTA_CREATE_SUCCESS:
+            return { loading: false, success: true, facturaDetalleVenta: action.payload }
+
+        case FACTURA_DETALLE_VENTA_CREATE_FAIL:
+            return { loading: false, error: action.payload }
+
+        default:
+            return state
+    }
+}
+
+
+
 
 
 export const facturaVentaCreateReducer = (state = {}, action) => {
