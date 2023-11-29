@@ -42,8 +42,8 @@ export  function BotonClientesDesplegable() {
           horizontal: 'left',
         }}
       >
-        <MenuItem onClick={handleClose} ><Button>Registro</Button></MenuItem>
-        <MenuItem onClick={handleClose} ><Button>Listado</Button></MenuItem>
+        <MenuItem onClick={handleClose} ><Button >Registro</Button></MenuItem>
+        <MenuItem onClick={handleClose} ><Button >Listado</Button></MenuItem>
 
       </Menu>
     </div>
@@ -89,8 +89,8 @@ export  function BotonIncidentesDesplegable() {
             horizontal: 'left',
           }}
         >
-          <MenuItem onClick={handleClose} ><Button>Registro</Button></MenuItem>
-          <MenuItem onClick={handleClose} ><Button>Historico</Button></MenuItem>
+          <MenuItem onClick={handleClose} ><Button href='/incidentes/registro'>Registro</Button></MenuItem>
+          <MenuItem onClick={handleClose} ><Button href='/incidentes/list'>Historico</Button></MenuItem>
   
         </Menu>
       </div>
