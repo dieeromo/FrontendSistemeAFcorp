@@ -14,10 +14,15 @@ import RegisterDetalle from './components/facturasVentas/RegisterDetalle'
 
 
 import ListFacturaVenta from './components/facturasVentas/ListFacturaVenta'
-import RegisterIncidentes from './components/incidentes/RegisterIncidentes'
-import ListIncidentes from './components/incidentes/ListIncidentes'
 import RegisterProductos from './components/productos/RegisterProductos'
 
+//INCIDENTES
+import RegisterIncidentes from './components/incidentes/RegisterIncidentes'
+import ListIncidentes from './components/incidentes/ListIncidentes'
+
+//BITACORA
+import RegisterEquipoRed from './components/bitacora/RegisterEquipoRed'
+import ListEquipoRed from './components/bitacora/ListEquiposRed'
 
 function App() {
   return (
@@ -45,6 +50,11 @@ function App() {
 
         
         <Route path='/productos/register' element={<  RegisterProductos />} />
+      
+
+        <Route path='/bitacora/register_equipo' element={<  RegisterEquipoRed />} />
+        <Route path='/bitacora/list_equipo' element={<  ListEquipoRed />} />
+
 
 
 

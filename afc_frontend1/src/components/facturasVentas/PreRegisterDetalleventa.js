@@ -55,6 +55,7 @@ const PreRegisterDetalles = () => {
 
 
   const [clicks, setClicks] = useState([]);
+  const [detalleFV_BD, SetDetalleFV_BD] = useState([])
 
 
   const handleClick = (event) => {
@@ -67,10 +68,20 @@ const PreRegisterDetalles = () => {
       //timestamp: new Date().toLocaleString(),
     };
 
+    const newDetalleFV_BD = {
+      id_factura : '2',
+      id_producto: id_producto,
+      precio_salida : precio_salida,
+      cantidad : cantidad,
+      subtotal : '25',
+      total : '30',
+      id_bodega: '1',
+      id_empresa:'1'
+    }
+
     setClicks([...clicks, newClick]);
+    SetDetalleFV_BD([...detalleFV_BD, newDetalleFV_BD])
   };
-
-
 
   const [numero, setNumero] = useState('');
   const [fecha, setFecha] = useState('');
@@ -92,7 +103,24 @@ const handleSelectChance_Empresa = (event) => {
 }
 
 const handleSubmit = (e) => {
-  dispatch(createFacturaDetalleVentaAction('2',id_producto,precio_salida,cantidad,'45','50','1','1'))
+  //dispatch(createFacturaDetalleVentaAction('2',id_producto,precio_salida,cantidad,'45','50','1','1'))
+  detalleFV_BD.forEach(elemento => {
+    //console.log(elemento.id_factura, elemento.id_producto)
+    dispatch(createFacturaDetalleVentaAction(
+      elemento.id_factura,
+      elemento.id_producto,
+      elemento.precio_salida,
+      elemento.cantidad,
+      elemento.subtotal,
+      elemento.total,
+      elemento.id_bodega,
+      elemento.id_empresa
+
+      //'2',id_producto,precio_salida,cantidad,'45','50','1','1'
+      ))
+  })
+
+
 }
 
   

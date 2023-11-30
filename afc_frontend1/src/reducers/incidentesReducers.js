@@ -31,6 +31,8 @@ INCIDENTES_LIST_REQUEST,
 INCIDENTES_LIST_SUCCESS,
 INCIDENTES_LIST_FAIL,
 INCIDENTES_LIST_RESET,
+
+
 } from '../constants/incidentesConstants'
 
 
@@ -131,5 +133,3 @@ export const incidenteListReducer = (state = {incidente:[] }, action) => {
             return state
     }
 }
-
-

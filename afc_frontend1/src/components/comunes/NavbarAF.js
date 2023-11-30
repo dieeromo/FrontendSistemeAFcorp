@@ -8,7 +8,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import BusinessIcon from '@mui/icons-material/Business';
 
 import {BotonClientesDesplegable, BotonIncidentesDesplegable, BotonProductoDesplegable, BotonFacturaDesplegable} from './BotonesDesplegables'
-
+import {BotonBitacoraDesplegable} from './BotonesDesplegables'
 
 
 export default function NavbarAF() {
@@ -55,8 +55,9 @@ export default function NavbarAF() {
                         <BotonFacturaDesplegable/>
                         <Button color='inherit'>Contabilidad</Button>
                         <BotonClientesDesplegable/>
-                        <BotonIncidentesDesplegable/>
                         <BotonProductoDesplegable/>
+                        <BotonIncidentesDesplegable/>
+                        <BotonBitacoraDesplegable/>
                         
                         
                         {tempo ? <>

@@ -27,6 +27,7 @@ import {
     facturaVentasListReducer,
 } from './reducers/facturasVentasReducers'
 
+//INCIDENTES    ################################
 import {
     nivelListReducer,
     redListReducer,
@@ -34,8 +35,27 @@ import {
     tipoListReducer,
     incidenteCreateReducer,
     incidenteListReducer, 
-} from './reducers/incidentesReducers'
 
+
+
+} from './reducers/incidentesReducers'
+//BITACORA #################################
+import {
+        
+    //equipo
+    equipoRedCreateReducer,
+    equipoRedListReducer,
+
+    //mantenimiento
+    mantenimientoEquipoCreateReducer,
+    mantenimientoEquipoListReducer,
+
+    //movimiento
+    movimientoEquipoCreateReducer,
+    movimientoEquipoListReducer,
+    
+} from './reducers/bitacoraReducers'
+// PRODUCTO #######################
 import {
     tipoProductoListReducer,
     subTipoProductoListReducer,
@@ -65,8 +85,8 @@ const reducer = combineReducers({
     //facturas ventas
     facturaVentaCreate:facturaVentaCreateReducer,
     facturaVentasList:facturaVentasListReducer,
-    
-    // de incidentes
+    //###############################################
+    //INCIODENTES
     nivelList:nivelListReducer,
     redList:redListReducer,
     nodoList:nodoListReducer,
@@ -74,7 +94,20 @@ const reducer = combineReducers({
     incidenteCreate :incidenteCreateReducer,
     incidenteList:incidenteListReducer,
 
-    //producto
+        //BITACORA
+    //equipo
+    equipoRedCreate:equipoRedCreateReducer,
+    equipoRedList:equipoRedListReducer,
+
+    //mantenimiento
+    mantenimientoEquipoCreate:mantenimientoEquipoCreateReducer,
+    mantenimientoEquipoList:mantenimientoEquipoListReducer,
+
+    //movimiento
+    movimientoEquipoCreate : movimientoEquipoCreateReducer,
+    movimientoEquipoList : movimientoEquipoListReducer,
+//###############################################
+    //PRODUCTO
     tipoProductoList : tipoProductoListReducer,
     subTipoProductoList : subTipoProductoListReducer,
     estadoProductoList : estadoProductoListReducer,
