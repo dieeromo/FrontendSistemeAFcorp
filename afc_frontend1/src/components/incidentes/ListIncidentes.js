@@ -13,7 +13,7 @@ export default function ListIncidentes() {
     
 
     const incidentes = SelectorIncidente()
-    console.log(incidentes)
+    //console.log(incidentes)
 
     const columns = [
         {

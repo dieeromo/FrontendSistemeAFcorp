@@ -12,6 +12,9 @@ export function SelectorProducto(){
     const productoList = useSelector(state => state.productoList)
     const{error, loading, producto} = productoList
     const lista_de_productos = producto.map((item)=>({
+        label: item.codigo + " : "+ item.descripcion + " || V:" + item.precio_salida,
+        value: item.id,
+
         codigo: item.codigo,
         descripcion: item.descripcion,
         value: item.id,

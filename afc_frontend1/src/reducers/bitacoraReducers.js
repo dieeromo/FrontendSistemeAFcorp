@@ -1,6 +1,6 @@
 import {
     //##############
-//BITACORA
+//BITACORA equipos
 //Equipos de red
 EQUIPO_RED_CREATE_REQUEST,
 EQUIPO_RED_CREATE_SUCCESS,
@@ -28,7 +28,35 @@ MOVIMIENTO_EQUIPO_LIST_REQUEST,
 MOVIMIENTO_EQUIPO_LIST_SUCCESS,
 MOVIMIENTO_EQUIPO_LIST_FAIL,
 
+//#######################################
+//constantes para BITACORA fIBRA
+//Trazado fibra
+TRAZADO_FIBRA_CREATE_REQUEST,
+TRAZADO_FIBRA_CREATE_SUCCESS,
+TRAZADO_FIBRA_CREATE_FAIL,
 
+TRAZADO_FIBRA_LIST_REQUEST,
+TRAZADO_FIBRA_LIST_SUCCESS,
+TRAZADO_FIBRA_LIST_FAIL,
+
+//trabajos fibra
+TRABAJOS_FIBRA_CREATE_REQUEST,
+TRABAJOS_FIBRA_CREATE_SUCCESS,
+TRABAJOS_FIBRA_CREATE_FAIL,
+
+TRABAJOS_FIBRA_LIST_REQUEST,
+TRABAJOS_FIBRA_LIST_SUCCESS,
+TRABAJOS_FIBRA_LIST_FAIL,
+
+//TIPO FIBRA
+TIPOS_FIBRA_LIST_REQUEST,
+TIPOS_FIBRA_LIST_SUCCESS,
+TIPOS_FIBRA_LIST_FAIL,
+
+//TIPO FIBRA
+TIPOS_TRABAJOS_LIST_REQUEST,
+TIPOS_TRABAJOS_LIST_SUCCESS,
+TIPOS_TRABAJOS_LIST_FAIL,
 
 } from '../constants/bitacoraConstants'
 
@@ -134,6 +162,109 @@ export const movimientoEquipoListReducer = (state = {movimiento_equipo:[] }, act
             return { loading: false, movimiento_equipo: action.payload }
 
         case MOVIMIENTO_EQUIPO_LIST_FAIL:
+            return { loading: false, error: action.payload }
+        default:
+            return state
+    }
+}
+
+
+
+
+//###############  FIBRA OPTICA
+//trazado
+export const trazadoFibraCreateReducer = (state = {}, action) => {
+    switch (action.type) {
+        case TRAZADO_FIBRA_CREATE_REQUEST:
+            return { loading: true }
+
+        case TRAZADO_FIBRA_CREATE_SUCCESS:
+            return { loading: false, success: true, trazado_fibra: action.payload }
+
+        case TRAZADO_FIBRA_CREATE_FAIL:
+            return { loading: false, error: action.payload }
+
+        default:
+            return state
+    }
+}
+
+export const trazadoFibraListReducer = (state = {trazado_fibra:[] }, action) => {
+    switch (action.type) {
+        case TRAZADO_FIBRA_LIST_REQUEST:
+            return { loading: true, trazado_fibra: [] }
+
+        case TRAZADO_FIBRA_LIST_SUCCESS:
+            return { loading: false, trazado_fibra: action.payload }
+
+        case TRAZADO_FIBRA_LIST_FAIL:
+            return { loading: false, error: action.payload }
+        default:
+            return state
+    }
+}
+
+//trabajos
+
+export const trabajosFibraCreateReducer = (state = {}, action) => {
+    switch (action.type) {
+        case TRABAJOS_FIBRA_CREATE_REQUEST:
+            return { loading: true }
+
+        case TRABAJOS_FIBRA_CREATE_SUCCESS:
+            return { loading: false, success: true, trabajo_fibra: action.payload }
+
+        case TRABAJOS_FIBRA_CREATE_FAIL:
+            return { loading: false, error: action.payload }
+
+        default:
+            return state
+    }
+}
+
+export const trabajosFibraListReducer = (state = {trabajos_fibra:[] }, action) => {
+    switch (action.type) {
+        case TRABAJOS_FIBRA_LIST_REQUEST:
+            return { loading: true, trabajos_fibra: [] }
+
+        case TRABAJOS_FIBRA_LIST_SUCCESS:
+            return { loading: false, trabajos_fibra: action.payload }
+
+        case TRABAJOS_FIBRA_LIST_FAIL:
+            return { loading: false, error: action.payload }
+        default:
+            return state
+    }
+}
+
+//tipo fibra
+
+export const tipoFibraListReducer = (state = {tipos_fibra:[] }, action) => {
+    switch (action.type) {
+        case TIPOS_FIBRA_LIST_REQUEST:
+            return { loading: true, tipos_fibra: [] }
+
+        case TIPOS_FIBRA_LIST_SUCCESS:
+            return { loading: false, tipos_fibra: action.payload }
+
+        case TIPOS_FIBRA_LIST_FAIL:
+            return { loading: false, error: action.payload }
+        default:
+            return state
+    }
+}
+
+//tipo trabajo
+
+export const tipoTrabajoListReducer = (state = {tipos_trabajo:[] }, action) => {
+    switch (action.type) {
+        case TIPOS_TRABAJOS_LIST_REQUEST:
+            return { loading: true, tipos_trabajo: [] }
+
+        case TIPOS_TRABAJOS_LIST_SUCCESS:
+            return { loading: false, tipos_trabajo: action.payload }
+
+        case TIPOS_TRABAJOS_LIST_FAIL:
             return { loading: false, error: action.payload }
         default:
             return state

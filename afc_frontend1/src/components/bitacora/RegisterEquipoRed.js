@@ -13,7 +13,7 @@ export default function RegisterEquipoRed() {
     const navigate = useNavigate();
     const path = ('/bitacora/list_equipo');
 
-    
+
     const [codigo, setCodigo] = useState('');
     const [alias, setAlias] = useState('');
     const [descripcion, setDescripcion] = useState('');
@@ -33,11 +33,11 @@ export default function RegisterEquipoRed() {
     const manejarCambioCheckbox = () => {
         // Cambia el estado al valor opuesto
         SetActivo(!activo);
-      };
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(createEquipoRedAction(codigo, alias,descripcion, fecha, nodo_inicial, nodo_actual, activo))
+        dispatch(createEquipoRedAction(codigo, alias, descripcion, fecha, nodo_inicial, nodo_actual, activo))
         navigate(path);
 
     }
@@ -99,14 +99,14 @@ export default function RegisterEquipoRed() {
                     </div>
 
                     <div>
-                    <label htmlFor="fecha">Fecha:</label>
-                    <input
-                        value={fecha}
-                        onChange={(e) => setFecha(e.target.value)}
-                        type="date"
-                        id="fecha"
-                        name="fecha" />
-                </div>
+                        <label htmlFor="fecha">Fecha:</label>
+                        <input
+                            value={fecha}
+                            onChange={(e) => setFecha(e.target.value)}
+                            type="date"
+                            id="fecha"
+                            name="fecha" />
+                    </div>
 
 
 
@@ -130,16 +130,16 @@ export default function RegisterEquipoRed() {
                     </div>
 
                     <div>
-                    <label htmlFor="activo">Activo:</label>
-                    <input
-                        value={activo}
-                        onChange={manejarCambioCheckbox}
-                        type="checkbox"
-                        id="activo"
-                        name="activo"
-                    />
-                </div>
-                <button type='submit'> Guardar </button>
+                        <label htmlFor="activo">Activo:</label>
+                        <input
+                            value={activo}
+                            onChange={manejarCambioCheckbox}
+                            type="checkbox"
+                            id="activo"
+                            name="activo"
+                        />
+                    </div>
+                    <button type='submit'> Guardar </button>
                 </form>
 
 

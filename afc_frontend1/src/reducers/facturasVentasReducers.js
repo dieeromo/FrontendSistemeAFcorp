@@ -77,3 +77,22 @@ export const facturaVentasListReducer = (state = { facturasVentas: [] }, action)
     }
 }
 
+
+export const detalleFacturaVentaListReducer = (state = { detalleVentas: [] }, action) => {
+    switch (action.type) {
+        case FACTURA_DETALLE_VENTA_LIST_REQUEST:
+            return { loading: true, detalleVentas: [] }
+
+        case FACTURA_DETALLE_VENTA_LIST_SUCCESS:
+            return { loading: false, detalleVentas: action.payload }
+
+        case FACTURA_DETALLE_VENTA_LIST_FAIL:
+            return { loading: false, error: action.payload }
+
+        default:
+            return state
+    }
+}
+
+
+

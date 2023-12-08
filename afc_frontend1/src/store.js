@@ -25,6 +25,7 @@ import {
 import {
     facturaVentaCreateReducer,
     facturaVentasListReducer,
+    detalleFacturaVentaListReducer,
 } from './reducers/facturasVentasReducers'
 
 //INCIDENTES    ################################
@@ -46,13 +47,31 @@ import {
     equipoRedCreateReducer,
     equipoRedListReducer,
 
-    //mantenimiento
+    //mantenimiento equipo
     mantenimientoEquipoCreateReducer,
     mantenimientoEquipoListReducer,
 
-    //movimiento
+    //movimiento equipo
     movimientoEquipoCreateReducer,
     movimientoEquipoListReducer,
+
+    //FIBRA
+    //trazado
+    trazadoFibraCreateReducer,
+    trazadoFibraListReducer,
+    //trabajos
+    trabajosFibraCreateReducer,
+    trabajosFibraListReducer, 
+    //tipo fibra
+    tipoFibraListReducer,
+    //tipo trabajop
+    tipoTrabajoListReducer,
+
+
+
+
+
+
     
 } from './reducers/bitacoraReducers'
 // PRODUCTO #######################
@@ -63,7 +82,11 @@ import {
     productoListReducer,
 } from './reducers/productoReducers'
 
+
+
 const reducer = combineReducers({
+
+   
 
     // User stuff
     userLogin: userLoginReducer,
@@ -85,6 +108,7 @@ const reducer = combineReducers({
     //facturas ventas
     facturaVentaCreate:facturaVentaCreateReducer,
     facturaVentasList:facturaVentasListReducer,
+    detalleFacturaVentaList:detalleFacturaVentaListReducer,
     //###############################################
     //INCIODENTES
     nivelList:nivelListReducer,
@@ -106,6 +130,19 @@ const reducer = combineReducers({
     //movimiento
     movimientoEquipoCreate : movimientoEquipoCreateReducer,
     movimientoEquipoList : movimientoEquipoListReducer,
+
+        //FIBRA
+    //trazado
+    trazadoFibraCreate:trazadoFibraCreateReducer,
+    trazadoFibraList:trazadoFibraListReducer,
+    //trabajos
+    trabajosFibraCreate:trabajosFibraCreateReducer,
+    trabajosFibraList:trabajosFibraListReducer, 
+    //tipo fibra
+    tipoFibraList:tipoFibraListReducer,
+    //tipo trabajop
+    tipoTrabajoList:tipoTrabajoListReducer,
+
 //###############################################
     //PRODUCTO
     tipoProductoList : tipoProductoListReducer,
