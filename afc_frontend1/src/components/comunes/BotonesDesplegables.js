@@ -42,8 +42,8 @@ export function BotonClientesDesplegable() {
           horizontal: 'left',
         }}
       >
-        <MenuItem onClick={handleClose} ><Button >Registro</Button></MenuItem>
-        <MenuItem onClick={handleClose} ><Button >Listado</Button></MenuItem>
+        <MenuItem onClick={handleClose} ><Button href='/cliente/register'>Registro</Button></MenuItem>
+        <MenuItem onClick={handleClose} ><Button href='/cliente/listado' >Listado</Button></MenuItem>
 
       </Menu>
     </div>

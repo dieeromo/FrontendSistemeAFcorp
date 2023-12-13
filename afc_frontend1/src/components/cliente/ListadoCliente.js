@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { listClienteAction } from '../../actions/clienteActions'
 import MUIDataTable from "mui-datatables"
+import NavbarAF from '../comunes/NavbarAF.js'
 
 
 
@@ -49,7 +50,9 @@ export default function ListadoCliente() {
 
     return (
         <>
-            <h1> Lista de clientes</h1>
+        <NavbarAF/>
+        <div className='register-cliente-container'>
+        <h1> Lista de clientes</h1>
             <MUIDataTable
             title={"lista"}
             data = {clientes}
@@ -57,8 +60,7 @@ export default function ListadoCliente() {
             
             />
 
-
-
+        </div>
 
         </>
     )
