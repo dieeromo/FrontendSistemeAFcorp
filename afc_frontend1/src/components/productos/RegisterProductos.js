@@ -5,12 +5,12 @@ import Select from 'react-select'
 import { createProductoAction } from '../../actions/productoActions'
 
 import { SelectorTipoProducto, SelectorSubTipoProducto, SelectorEstadoProducto } from './norender/selectoresProductos'
-
+import NavbarAF from '../comunes/NavbarAF'
 export default function RegisterProductos() {
     const dispatch = useDispatch();
 
     const navigate = useNavigate();
-    const path = ('/cliente/listado');
+    const path = ('/productos/list');
 
     const [modelo, SetModelo] = useState('');
     const [descripcion, SetDescripcion] = useState('');
@@ -49,7 +49,9 @@ export default function RegisterProductos() {
     }
     return (
         <>
-            <h1>Registro de productos</h1>
+        <NavbarAF/>
+        <div className='register_producto_container'>
+        <h1>Registro de productos</h1>
             <form onSubmit={handleSubmit} method="POST" action="#">
                 <div>
                     <label htmlFor="modelo" > Modelo: </label>
@@ -187,6 +189,9 @@ export default function RegisterProductos() {
                 <button type='submit'> Guardar </button>
 
             </form>
+
+        </div>
+
         </>
     )
 }

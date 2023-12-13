@@ -21,12 +21,19 @@ import {
     modo_cv_ListReducer,
     bodegaListReducer,
 } from './reducers/generalAFCReducers'
-
+// FACTURAS
 import {
     facturaVentaCreateReducer,
     facturaVentasListReducer,
-    detalleFacturaVentaListReducer,
+    facturaVentaLastListReducer,
+    facturaVentasUnicaReducer,
+    facturaVentaDetallesSolaReducer,
 } from './reducers/facturasVentasReducers'
+//COBROS
+import {
+    cobroFacturaCreateReducer,
+    cobroFacturaListReducer
+} from './reducers/cobrosReducer'
 
 //INCIDENTES    ################################
 import {
@@ -36,9 +43,6 @@ import {
     tipoListReducer,
     incidenteCreateReducer,
     incidenteListReducer, 
-
-
-
 } from './reducers/incidentesReducers'
 //BITACORA #################################
 import {
@@ -66,12 +70,6 @@ import {
     tipoFibraListReducer,
     //tipo trabajop
     tipoTrabajoListReducer,
-
-
-
-
-
-
     
 } from './reducers/bitacoraReducers'
 // PRODUCTO #######################
@@ -108,7 +106,12 @@ const reducer = combineReducers({
     //facturas ventas
     facturaVentaCreate:facturaVentaCreateReducer,
     facturaVentasList:facturaVentasListReducer,
-    detalleFacturaVentaList:detalleFacturaVentaListReducer,
+    facturaVentaLastList : facturaVentaLastListReducer,
+    facturaVentasUnica:facturaVentasUnicaReducer,
+    facturaVentaDetallesSola:facturaVentaDetallesSolaReducer,
+    //Cobros
+    cobroFacturaCreate:cobroFacturaCreateReducer,
+    cobroFacturaList:cobroFacturaListReducer,
     //###############################################
     //INCIODENTES
     nivelList:nivelListReducer,

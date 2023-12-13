@@ -1,45 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import {listFacturaVentaAction, getUltimaFacturaVentaAction , allUltimaFacturaVentaAction, detalleUltimaFacturaVentaAction} from '../../../actions/facturaVentaActions'
+import {listFacturaVentaAction} from '../../../actions/facturaVentaActions'
 
 
-// export function SelectorDetalleultimaFacturaVenta(props){
-//     const dispatch = useDispatch();
-
-//     useEffect(() => {
-//         dispatch(detalleUltimaFacturaVentaAction(props.id))
-//     }, [dispatch])
-          
-//     const detalleFacturaVentaList = useSelector(state => state.detalleFacturaVentaList)
-//     const {error, loading, detalleVentas} = detalleFacturaVentaList
-//     return(detalleVentas)
-// }
-
-export function Selector_All_UltimaFactura(){
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(allUltimaFacturaVentaAction())
-    }, [dispatch])
-
-    const facturaVentasList = useSelector(state => state.facturaVentasList)
-    const {error, loading, facturasVentas} = facturaVentasList
-
-    return(facturasVentas)
-}
-
-
-export function SelectorUltimaFactura(){
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getUltimaFacturaVentaAction())
-    }, [dispatch])
-
-    const facturaVentasList = useSelector(state => state.facturaVentasList)
-    const {error, loading, facturasVentas} = facturaVentasList
-    return(facturasVentas)
-}
 
 
 export function SelectorFacturasV(){
@@ -55,6 +18,9 @@ export function SelectorFacturasV(){
 
     const lista_facturas_vendidas = facturasVentas.map((item) => (
         {
+            label: item.numero + " : " + item.cliente + " : " + item.monto + " : " + item.fecha,
+            value: item.id, // estos son utilizados especificamente en el selector
+            valueEmpresa: item.empresa,
 
             id : item.id,
             numero : item.numero,

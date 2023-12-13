@@ -7,7 +7,7 @@ import { AppBar, Toolbar, IconButton, Typography, Stack, Button} from '@mui/mate
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import BusinessIcon from '@mui/icons-material/Business';
 
-import {BotonClientesDesplegable, BotonIncidentesDesplegable, BotonProductoDesplegable, BotonFacturaDesplegable} from './BotonesDesplegables'
+import {BotonClientesDesplegable, BotonIncidentesDesplegable, BotonProductoDesplegable, BotonFacturaDesplegable, BotonCobrosDesplegable} from './BotonesDesplegables'
 import {BotonBitacoraDesplegable} from './BotonesDesplegables'
 
 
@@ -52,6 +52,7 @@ export default function NavbarAF() {
                         AFCorp
                     </Typography>
                     <Stack direction='row' spacing={2}>
+                        <BotonCobrosDesplegable/>
                         <BotonFacturaDesplegable/>
                         <Button color='inherit'>Contabilidad</Button>
                         <BotonClientesDesplegable/>

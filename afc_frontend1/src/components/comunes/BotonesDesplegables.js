@@ -135,8 +135,8 @@ export function BotonProductoDesplegable() {
           horizontal: 'left',
         }}
       >
-        <MenuItem onClick={handleClose} ><Button>Registro</Button></MenuItem>
-        <MenuItem onClick={handleClose} ><Button>Listado</Button></MenuItem>
+        <MenuItem onClick={handleClose} ><Button href='/productos/register'>Registro</Button></MenuItem>
+        <MenuItem onClick={handleClose} ><Button href='/productos/list'>Listado</Button></MenuItem>
 
       </Menu>
     </div>
@@ -237,6 +237,57 @@ export function BotonBitacoraDesplegable() {
         <MenuItem onClick={handleClose} ><Button href='/bitacora/list_trazado_fo' >Lista de trazados de FO</Button></MenuItem>
         <MenuItem onClick={handleClose} ><Button href='/bitacora/register_trabajo_fo' >Registro trabajo FO</Button></MenuItem>
         <MenuItem onClick={handleClose} ><Button href='/bitacora/list_trabajo_fo' >Lista de trabajos FO</Button></MenuItem>
+        
+
+      </Menu>
+    </div>
+  );
+}
+
+
+
+
+export function BotonCobrosDesplegable() {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  return (
+    <div>
+      <Button
+        id="demo-positioned-button"
+        aria-controls={open ? 'demo-positioned-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+        color='inherit'
+        endIcon={<KeyboardArrowDownIcon />}
+      >
+        Cobros
+      </Button>
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+      >
+        <MenuItem onClick={handleClose} ><Button href='/cobros/register'>Registro</Button></MenuItem>
+        <MenuItem onClick={handleClose} ><Button href='/cobros/list'>Listado</Button></MenuItem>
+
         
 
       </Menu>

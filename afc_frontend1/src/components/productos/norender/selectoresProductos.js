@@ -14,11 +14,19 @@ export function SelectorProducto(){
     const lista_de_productos = producto.map((item)=>({
         label: item.codigo + " : "+ item.descripcion + " || V:" + item.precio_salida,
         value: item.id,
-
-        codigo: item.codigo,
+        
+        modelo: item.modelo,
         descripcion: item.descripcion,
-        value: item.id,
-        precio_salida:item.precio_salida
+        codigo: item.codigo,
+        tipo: item.tipo,
+        subtipo: item.subtipo,
+        estado: item.estado,
+        precio_entrada: item.precio_entrada,
+        precio_salida : item.precio_salida,
+        precio_promo: item.precio_promo,
+        seguimiento: item.seguimiento ? "si":"no",
+        observacion: item.observacion
+
     }))
 
     return (lista_de_productos)

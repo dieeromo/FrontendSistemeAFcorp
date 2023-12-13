@@ -14,7 +14,7 @@ import '../../App.css'
 
 const RegisterFacVenta = ({ facturasVentas, getUltimaFacturaVentaAction }) => {
     const navigate = useNavigate();
-    const path = ('/factura/venta/show');
+    const path = ('/factura/venta/list');
     const dispatch = useDispatch();
     //// detalle factura
     const [bodega, set_bodega] = useState('')

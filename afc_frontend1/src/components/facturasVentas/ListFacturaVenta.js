@@ -8,6 +8,7 @@ import MUIDataTable from "mui-datatables"
 import NavbarAF from '../comunes/NavbarAF'
 
 import '../../App.css'
+
 export default function ListFacturaVenta() {
 
 

@@ -9,13 +9,16 @@ import RegisterCliente from './components/cliente/RegisterCliente'
 import ListadoCliente from './components/cliente/ListadoCliente'
 
 
-
+// FACTURAS
 import RegisterFacVenta from './components/facturasVentas/RegisterFacVenta'
 import ListFacturaVenta from './components/facturasVentas/ListFacturaVenta'
 import ShowFacturaDetalle from './components/facturasVentas/ShowFacturaDetalle'
-
+//COBROS FACTURAS
+import RegisterCobrosFacturasV from './components/cobros/RegisterCobrosFacturasV'
+import ListCobrosFacturas from './components/cobros/ListCobrosFacturas'
+// PRODUCTOS
 import RegisterProductos from './components/productos/RegisterProductos'
-
+import ListProductos from './components/productos/ListProductos'
 //INCIDENTES
 import RegisterIncidentes from './components/incidentes/RegisterIncidentes'
 import ListIncidentes from './components/incidentes/ListIncidentes'
@@ -41,10 +44,13 @@ function App() {
         
         <Route path='/cliente/register' element={<RegisterCliente />} />
         <Route path='/cliente/listado' element={<ListadoCliente />} />
-
+        
         <Route path='/factura/venta/registro' element={<RegisterFacVenta />} />
         <Route path='/factura/venta/list' element={< ListFacturaVenta />} />
-        <Route path='/factura/venta/show/' element={< ShowFacturaDetalle />} />
+        <Route path='/factura/venta/show/' element={< ShowFacturaDetalle />} /> 
+
+        <Route path='/cobros/register' element={<RegisterCobrosFacturasV/>}/>
+        <Route path='/cobros/list' element={<ListCobrosFacturas/>}/>
 
        
    
@@ -55,7 +61,9 @@ function App() {
 
         
         <Route path='/productos/register' element={<  RegisterProductos />} />
+        <Route path='/productos/list' element={<  ListProductos/>} />
       
+        
 
         <Route path='/bitacora/register_equipo' element={<  RegisterEquipoRed />} />
         <Route path='/bitacora/list_equipo' element={<  ListEquipoRed />} />
