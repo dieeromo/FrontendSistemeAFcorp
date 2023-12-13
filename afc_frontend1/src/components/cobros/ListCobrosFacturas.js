@@ -5,6 +5,7 @@ import '../../App.css'
 
 export default function ListCobros(){
     const cobrosList = SelectorCobro()
+    console.log(cobrosList)
     const columns = [
         {
             name: 'factura',
